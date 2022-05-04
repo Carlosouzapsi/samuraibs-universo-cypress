@@ -1,5 +1,13 @@
 {
     "baseUrl": "http://localhost:3000",
     "viewportWidth": 1440,
-    "viewportHeight": 900
+    "viewportHeight": 900,
+    "dbConfig":  {
+        "host": "chunee.db.elephantsql.com",
+        "user": "hpefrzuv",
+        "password": "2lglMFjXGOSjg_emVbRHrhmNrY3tNXNO",
+        "database": "hpefrzuv",
+        "port": 5432
+
+    }
 }

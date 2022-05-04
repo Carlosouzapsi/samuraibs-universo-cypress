@@ -12,6 +12,7 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
+
 const { Pool } = require('pg')
 
 /**
@@ -22,13 +23,9 @@ module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 
-  const pool = new Pool({
-    host: 'chunee.db.elephantsql.com',
-    user: 'hpefrzuv',
-    password: '2lglMFjXGOSjg_emVbRHrhmNrY3tNXNO',
-    database: 'hpefrzuv',
-    port: 5432
-  })
+  const configJson = require(config.configFile)
+
+  const pool = new Pool(configJson.dbConfig)
 
   on('task', {
     removeUser(email) {
